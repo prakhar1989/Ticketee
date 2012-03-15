@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+
+  before_filter :find_project, :only => [:show, :edit, :destroy, :update]
+
   def index
     @projects = Project.all
   end
@@ -19,11 +22,11 @@ class ProjectsController < ApplicationController
   end
   
   def show
-    @project = Project.find(params[:id])
+    #filter doing this job
   end
 
   def edit
-    @project = Project.find(params[:id])
+    #filter doing this job
   end
 
   def update
@@ -46,4 +49,12 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end  
 
+  private
+  
+    def find_project
+      @project = Project.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "The project you were looking for could not be found."
+      redirect_to projects_path
+    end
 end
