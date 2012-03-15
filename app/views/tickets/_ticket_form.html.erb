@@ -1,0 +1,7 @@
+<%= simple_form_for [@project, @ticket] do |f| %>
+  <p>
+    <%= f.input :title %>
+    <%= f.input :description %>
+  </p>
+    <%= f.submit %>
+<% end %>
