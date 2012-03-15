@@ -1,0 +1,4 @@
+Given /^there is a project called "([^\"]*)"$/ do |this_name|
+  @project = Factory(:project, :name => this_name)
+end
+
