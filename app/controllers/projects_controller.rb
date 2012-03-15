@@ -17,8 +17,9 @@ class ProjectsController < ApplicationController
       flash[:alert] = "Project has not been created!"
     end
   end
-
+  
   def show
     @project = Project.find(params[:id])
   end
+
 end
