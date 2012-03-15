@@ -3,11 +3,17 @@ Feature: Creating Projects
     As a user
     I want to create them easily
 
-    Scenario: Creating a project
+    Background:
         Given I am on the homepage
         When I follow "New Project"
+
+    Scenario: Creating a project
         And I fill in "Name" with "Textmate 2"
         And I press "Create Project"
         Then I should see "Project has been created"
         And I should be on the project page for "Textmate 2"
         And I should see "Textmate 2 - Projects - Ticketeee"
+
+    Scenario: Creating a project without a name
+        And I press "Create Project"
+        Then I should see "Project has not been created!"
