@@ -6,4 +6,5 @@ Note: Using cucumber with training wheels
 
 Todo
 ----
-- Resolve the deprecation warnings
+- FIXED: Resolve the deprecation warnings
+- App styling
