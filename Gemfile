@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 gem 'sqlite3'
+gem 'devise'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -15,6 +16,7 @@ gem 'simple_form'
 
 group :test, :development do
   gem 'rspec-rails', '2.8.1'
+  gem 'email_spec'
 end
 
 group :test do
