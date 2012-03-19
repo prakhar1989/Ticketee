@@ -18,9 +18,18 @@ Feature: Creating Users
         And I fill in "Password" with "password"
         And I press "Create User"
         Then I should see "User has been created"
+        And I should see "newbie@ticketee.com (User)"
 
     Scenario: Leaving email blank results in error
         When I fill in "Email" with ""
         And I fill in "Password" with "password"
         And I press "Create User"
         Then I should see "User has not been created"
+
+    Scenario: Creating a new admin user
+        And I fill in "Email" with "newadmin@ticketee.com"
+        And I fill in "Password" with "password"
+        And I check "Is an admin?"
+        And I press "Create User"
+        Then I should see "Admin has been created"
+        And I should see "newadmin@ticketee.com (Admin)"
