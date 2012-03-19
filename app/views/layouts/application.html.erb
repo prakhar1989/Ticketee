@@ -36,9 +36,9 @@
           <a class="brand" href="<%= root_path %>">Tickteee</a>
           <div class="container nav-collapse">
             <ul class="nav">
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
+              <%= admins_only do %>
+                <li><%= link_to "Admin", admin_root_path %></li>
+              <% end %>
             </ul>
             <p class="navbar-text pull-right">
             <% if user_signed_in? %>
