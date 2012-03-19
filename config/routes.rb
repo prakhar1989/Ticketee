@@ -7,4 +7,8 @@ Tickteee::Application.routes.draw do
   end
 
   root :to => "projects#index"
+
+  namespace :admin do
+    resources :users
+  end
 end
