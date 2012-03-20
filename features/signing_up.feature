@@ -10,4 +10,4 @@ Feature: Signing Up
         And I fill in "Password" with "password"
         And I fill in "Password confirmation" with "password"
         And I press "Sign up"
-        Then I should see "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
+        Then I should see "Please confirm your account before signing in"
