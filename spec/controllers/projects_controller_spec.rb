@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ProjectsController do
 
-  let (:user) { create_user! }
+  let(:user) { create_user! }
 
   let(:project) { Factory(:project) }
 
