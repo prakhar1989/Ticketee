@@ -1,7 +1,11 @@
-<%= simple_form_for [@project, @ticket] do |f| %>
+<%= simple_form_for [@project, @ticket], :html => { :multipart => true } do |f| %>
   <p>
     <%= f.input :title %>
     <%= f.input :description %>
+  </p>
+  <p>
+    <%= f.label :asset, "File" %>
+    <%= f.file_field :asset %>
   </p>
     <%= f.submit %>
 <% end %>
