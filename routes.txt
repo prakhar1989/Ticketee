@@ -1,0 +1,69 @@
+          new_user_session GET    /users/sign_in(.:format)                             devise/sessions#new
+              user_session POST   /users/sign_in(.:format)                             devise/sessions#create
+      destroy_user_session DELETE /users/sign_out(.:format)                            devise/sessions#destroy
+             user_password POST   /users/password(.:format)                            devise/passwords#create
+         new_user_password GET    /users/password/new(.:format)                        devise/passwords#new
+        edit_user_password GET    /users/password/edit(.:format)                       devise/passwords#edit
+                           PUT    /users/password(.:format)                            devise/passwords#update
+  cancel_user_registration GET    /users/cancel(.:format)                              registrations#cancel
+         user_registration POST   /users(.:format)                                     registrations#create
+     new_user_registration GET    /users/sign_up(.:format)                             registrations#new
+    edit_user_registration GET    /users/edit(.:format)                                registrations#edit
+                           PUT    /users(.:format)                                     registrations#update
+                           DELETE /users(.:format)                                     registrations#destroy
+         user_confirmation POST   /users/confirmation(.:format)                        devise/confirmations#create
+     new_user_confirmation GET    /users/confirmation/new(.:format)                    devise/confirmations#new
+                           GET    /users/confirmation(.:format)                        devise/confirmations#show
+              confirm_user GET    /awaiting_confirmation(.:format)                     users#confirmation
+           project_tickets GET    /projects/:project_id/tickets(.:format)              tickets#index
+                           POST   /projects/:project_id/tickets(.:format)              tickets#create
+        new_project_ticket GET    /projects/:project_id/tickets/new(.:format)          tickets#new
+       edit_project_ticket GET    /projects/:project_id/tickets/:id/edit(.:format)     tickets#edit
+            project_ticket GET    /projects/:project_id/tickets/:id(.:format)          tickets#show
+                           PUT    /projects/:project_id/tickets/:id(.:format)          tickets#update
+                           DELETE /projects/:project_id/tickets/:id(.:format)          tickets#destroy
+                  projects GET    /projects(.:format)                                  projects#index
+                           POST   /projects(.:format)                                  projects#create
+               new_project GET    /projects/new(.:format)                              projects#new
+              edit_project GET    /projects/:id/edit(.:format)                         projects#edit
+                   project GET    /projects/:id(.:format)                              projects#show
+                           PUT    /projects/:id(.:format)                              projects#update
+                           DELETE /projects/:id(.:format)                              projects#destroy
+           ticket_comments GET    /tickets/:ticket_id/comments(.:format)               comments#index
+                           POST   /tickets/:ticket_id/comments(.:format)               comments#create
+        new_ticket_comment GET    /tickets/:ticket_id/comments/new(.:format)           comments#new
+       edit_ticket_comment GET    /tickets/:ticket_id/comments/:id/edit(.:format)      comments#edit
+            ticket_comment GET    /tickets/:ticket_id/comments/:id(.:format)           comments#show
+                           PUT    /tickets/:ticket_id/comments/:id(.:format)           comments#update
+                           DELETE /tickets/:ticket_id/comments/:id(.:format)           comments#destroy
+                   tickets GET    /tickets(.:format)                                   tickets#index
+                           POST   /tickets(.:format)                                   tickets#create
+                new_ticket GET    /tickets/new(.:format)                               tickets#new
+               edit_ticket GET    /tickets/:id/edit(.:format)                          tickets#edit
+                    ticket GET    /tickets/:id(.:format)                               tickets#show
+                           PUT    /tickets/:id(.:format)                               tickets#update
+                           DELETE /tickets/:id(.:format)                               tickets#destroy
+                      root        /                                                    projects#index
+                admin_root        /admin(.:format)                                     admin/base#index
+    admin_user_permissions GET    /admin/users/:user_id/permissions(.:format)          admin/permissions#index
+                           POST   /admin/users/:user_id/permissions(.:format)          admin/permissions#create
+ new_admin_user_permission GET    /admin/users/:user_id/permissions/new(.:format)      admin/permissions#new
+edit_admin_user_permission GET    /admin/users/:user_id/permissions/:id/edit(.:format) admin/permissions#edit
+     admin_user_permission GET    /admin/users/:user_id/permissions/:id(.:format)      admin/permissions#show
+                           PUT    /admin/users/:user_id/permissions/:id(.:format)      admin/permissions#update
+                           DELETE /admin/users/:user_id/permissions/:id(.:format)      admin/permissions#destroy
+               admin_users GET    /admin/users(.:format)                               admin/users#index
+                           POST   /admin/users(.:format)                               admin/users#create
+            new_admin_user GET    /admin/users/new(.:format)                           admin/users#new
+           edit_admin_user GET    /admin/users/:id/edit(.:format)                      admin/users#edit
+                admin_user GET    /admin/users/:id(.:format)                           admin/users#show
+                           PUT    /admin/users/:id(.:format)                           admin/users#update
+                           DELETE /admin/users/:id(.:format)                           admin/users#destroy
+   update_user_permissions PUT    /admin/users/:user_id/permissions(.:format)          admin/permissions#update
+                     files GET    /files(.:format)                                     files#index
+                           POST   /files(.:format)                                     files#create
+                  new_file GET    /files/new(.:format)                                 files#new
+                 edit_file GET    /files/:id/edit(.:format)                            files#edit
+                      file GET    /files/:id(.:format)                                 files#show
+                           PUT    /files/:id(.:format)                                 files#update
+                           DELETE /files/:id(.:format)                                 files#destroy

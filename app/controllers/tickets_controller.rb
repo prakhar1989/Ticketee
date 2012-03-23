@@ -26,6 +26,7 @@ class TicketsController < ApplicationController
 
   def show
     #filter is finding the ticket
+    @comment = @ticket.comments.build
   end
 
   def edit

@@ -1,0 +1,9 @@
+<strong>New Comment</strong>
+<%= simple_form_for [@ticket, @comment] do |f| %>
+  <%= f.error_notification %>  
+  <p>
+    <%= f.input :text %>
+  </p>
+  <%= f.button :submit %>
+<% end %>
+

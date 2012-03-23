@@ -10,6 +10,10 @@ Tickteee::Application.routes.draw do
     resources :tickets
   end
 
+  resources :tickets do
+    resources :comments
+  end
+
   root :to => "projects#index"
 
   namespace :admin do

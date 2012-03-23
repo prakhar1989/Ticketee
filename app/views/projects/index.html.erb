@@ -1,5 +1,5 @@
 <h2>Projects</h2>
-<ul>
+<ul id="projects">
   <% @projects.each do |project| %>
     <li><%= link_to project.name, project %></li>
   <% end %>
@@ -7,5 +7,4 @@
 <%= admins_only do %>
   <%= link_to "New Project", new_project_path %>
 <% end %>
-
 
