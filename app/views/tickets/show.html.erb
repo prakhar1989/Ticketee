@@ -2,6 +2,7 @@
   <h2><%= @ticket.title %></h2>
   <%= simple_format(@ticket.description) %>
   <h3>Created by <%= @ticket.user.email %> </h3>
+  <%= render @ticket.state if @ticket.state %>
 
   <% if @ticket.assets.exists? %>
     <h3>Attached Files</h3>
