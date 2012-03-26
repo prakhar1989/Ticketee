@@ -7,4 +7,8 @@ When /^I follow "([^"]*)" for the "([^"]*)" state$/ do |link, name|
   steps(%Q{When I follow "#{link}" within "#state_#{state.id}"})
 end
 
+Then /^I should not see the "([^"]*)" element$/ do |css|
+  page.should_not(have_css(css),
+                  "Expected to not see the #{css} element, but did.")
+end
 
