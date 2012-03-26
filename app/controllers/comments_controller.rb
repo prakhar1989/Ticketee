@@ -18,12 +18,10 @@ class CommentsController < ApplicationController
       flash[:alert] = "Comment has not been created"
       render :template => 'tickets/show'
     end
-
   end
 
 
   private
-  
     def find_ticket
       @ticket = Ticket.find(params[:ticket_id])
     end

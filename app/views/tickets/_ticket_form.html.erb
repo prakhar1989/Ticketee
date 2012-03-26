@@ -2,6 +2,8 @@
   <p>
     <%= f.input :title %>
     <%= f.input :description %>
+    <%= label_tag :tags %>
+    <%= text_field_tag :tags, params[:tags] %>
   </p>
 
   <% number = 0 %>
