@@ -7,6 +7,8 @@
 
   <% authorized?(:"change states", @project) do %>
   <p>
+    <%= label_tag :tags %>
+    <%= text_field_tag :tags, params[:tags] %>
     <%= f.label :state_id %>
     <%= f.select :state_id, @states.map { |s| [s.name, s.id] },
           :selected => @ticket.state_id %>
