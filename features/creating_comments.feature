@@ -45,6 +45,7 @@ Feature: Creating comments
 
   Scenario: Adding a tag to a ticket
     Given "user@ticketee.com" can change states on the "Ticketee" project
+    And "user@ticketee.com" can tag the "Ticketee" project
     When I follow "Change a ticket's state" 
     Then I should not see "bug" within "#ticket #tags"
     And I fill in "Text" with "Adding the bug tag"
