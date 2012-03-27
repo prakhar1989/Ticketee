@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'cancan'
 gem 'paperclip'
+gem 'searcher'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
