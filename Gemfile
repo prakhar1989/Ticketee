@@ -19,6 +19,7 @@ gem 'simple_form'
 
 group :test, :development do
   gem 'rspec-rails', '2.8.1'
+  gem 'gmail'
   gem 'email_spec'
 end
 
