@@ -6,6 +6,12 @@ Tickteee::Application.routes.draw do
     :to => "users#confirmation",
     :as => "confirm_user"
 
+  namespace :api do
+    namespace :v1 do
+      resources :projects
+    end
+  end
+
   resources :projects do
     resources :tickets do
       collection do
