@@ -27,4 +27,22 @@ Feature: Ticket Notifications
     Then they click the first link in the email
     Then I should see "Release date" within "#ticket h2"
     And the email should contain 2 parts
-    
+
+  Scenario: Comment authors are automatically subscribed to a ticket
+    When I follow "Textmate 2"
+    And I follow "Release date"
+    And I fill in "Text" with "Is it out yet?"
+    And I press "Create Comment"
+    Then I should see "Comment has been created"
+    When I follow "Sign out"
+
+    Given a clear email queue
+
+    Given I am signed in as "alice@ticketee.com"
+    When I follow "Textmate 2"
+    And I follow "Release date"
+    And I fill in "Text" with "Not yet!"
+    And I press "Create Comment"
+    Then I should see "Comment has been created"
+    Then "bob@ticketee.com" should receive an email
+    Then "alice@ticketee.com" should have no emails
