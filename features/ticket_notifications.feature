@@ -26,3 +26,5 @@ Feature: Ticket Notifications
     And they should see "[ticketee] Textmate 2 - Release date" in the email subject
     Then they click the first link in the email
     Then I should see "Release date" within "#ticket h2"
+    And the email should contain 2 parts
+    
